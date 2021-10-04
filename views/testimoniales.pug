@@ -1,0 +1,40 @@
+extends ./layout/index
+
+block contenido
+    main.container.mt-5 
+        h1.text-center=pagina
+
+        blockquote.text-center Lee sobre nuestros clientes y sus experiencias 
+        include ./layout/bloque_testimoniales
+               
+
+        div.row
+
+            h2.d-block.w-100.text-center Agrega un testimonial
+
+
+            div.row.justify-content-center.col
+                div.col-md-8
+                    form(action="/testimoniales", method="POST")
+                        div.form-group
+                            label(for="nombre") Nombre
+                            input(type="text" id="nombre" name="nombre", placeholder="Tu nombre" class="form-control" value=`${nombre}`)
+                            if(errores)
+                                if(errores.includes("nombre"))
+                                    p.alert.col.alert-danger.text-center.mt-2 El nombre es obligatorio
+
+                        div.form-group
+                            label(for="correo") Correo
+                            input(type="email" id="correo" name="correo", placeholder="Tu correo" class="form-control" value=`${correo}`)
+                            if(errores)
+                                if(errores.includes("correo"))
+                                    p.alert.col.alert-danger.text-center.mt-2 El correo es obligatorio
+
+                        div.form-group
+                            label(for="mensaje") Mensaje
+                            textarea(id="mensaje" name="mensaje" placeholder="Tu Testimonio" class="form-control" rows=6)=value=`${mensaje}` 
+                            if(errores)
+                                if(errores.includes("mensaje"))
+                                    p.alert.col.alert-danger.text-center.mt-2 El mensaje es obligatorio
+
+                        input.btn.btn-success.btn-block(type="submit")
