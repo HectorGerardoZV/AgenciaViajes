@@ -21,7 +21,7 @@ const port = process.env.PORT || 4000;
 //Habilitar pug
 
 app.set("view engine","pug")
-app.set('view', path.join(__dirname, 'view'))
+app.set('view')
 
 //Obtener el año actual
 app.use((req,res,next)=>{
