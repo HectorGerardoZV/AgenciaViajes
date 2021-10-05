@@ -4,6 +4,8 @@ import db from "./config/db.js";
 import dontEnv from "dotenv"
 dontEnv.config({path: "variables.env"})
 
+
+
 const app = express();
 
 
