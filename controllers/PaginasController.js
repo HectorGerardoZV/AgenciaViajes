@@ -10,7 +10,7 @@ const paginaInicio =async (req, res)=>{
             [ Viaje.findAll({limit: 3}),
              Testimonial.findAll({limit:3})])
 
-        res.render("Inicio",{
+        res.render("inicio",{
             pagina: "Agencia Viajes",
             clase: "home",
             viajes: resultado[0],
