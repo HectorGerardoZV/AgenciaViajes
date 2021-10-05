@@ -34,6 +34,7 @@ app.use(express.urlencoded({extended:true}));
 
 //Definir la carpeta publica
 app.use(express.static("./public"))
+app.use(express.static("./views"))
 
 
 //Agregar router
