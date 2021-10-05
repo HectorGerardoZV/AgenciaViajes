@@ -4,8 +4,8 @@
   "description": "Aprendiendo NodeJS y ReactJS",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon layout",
+    "start": "node layout"
   },
   "keywords": [
     "NodeJS",
